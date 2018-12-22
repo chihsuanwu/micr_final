@@ -8,7 +8,7 @@ def main():
     stock = twstock.realtime.get(num)
 
     op = stock['realtime']['open']
-    now = stock["latest_trade_price"]
+    now = stock['realtime']["latest_trade_price"]
 
     a_s = float(now) - float(op)
 
