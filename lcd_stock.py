@@ -11,11 +11,17 @@ def main():
     now = stock['realtime']["latest_trade_price"]
 
     a_s = float(now) - float(op)
+    
+    output = now + '  '
+    if a_s > 0:
+      output += '+'
+    
+    output += "%.2f"%a_s
 
     lcd.lcd_byte(lcd.LCD_LINE_1, lcd.LCD_CMD)
     lcd.lcd_string(num, 2)
     lcd.lcd_byte(lcd.LCD_LINE_2, lcd.LCD_CMD)
-    lcd.lcd_string(str(a_s), 2)
+    lcd.lcd_string(output, 2)
 
 
 
