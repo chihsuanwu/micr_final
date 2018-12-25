@@ -88,7 +88,7 @@ def main():
   lcd_byte(LCD_LINE_2, LCD_CMD)
   lcd_string(".co.uk",3)
 
-  time.sleep(30)
+  time.sleep(3)
 
   # Turn off backlight
   GPIO.output(LED_ON, False)
@@ -108,7 +108,9 @@ def lcd_init():
   lcd_byte(0x28,LCD_CMD)
   lcd_byte(0x0C,LCD_CMD)  
   lcd_byte(0x06,LCD_CMD)
-  lcd_byte(0x01,LCD_CMD)  
+  lcd_byte(0x01,LCD_CMD)
+  
+  time.sleep(1)
 
 def lcd_string(message,style):
   # Send string to display
